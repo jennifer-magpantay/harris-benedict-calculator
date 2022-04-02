@@ -1,0 +1,25 @@
+{
+  "name": "harris-benedict-calculator",
+  "version": "1.0.0",
+  "description": "App to calculate how much energy the body needs to sustain its normal function based on Harris-Benedict equation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennifer-magpantay/harris-benedict-calculator.git"
+  },
+  "keywords": [
+    "HTML5",
+    "CSS3",
+    "Sass",
+    "JavaScript"
+  ],
+  "author": "Jennifer Magpantay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jennifer-magpantay/harris-benedict-calculator/issues"
+  },
+  "homepage": "https://github.com/jennifer-magpantay/harris-benedict-calculator#readme"
+}
