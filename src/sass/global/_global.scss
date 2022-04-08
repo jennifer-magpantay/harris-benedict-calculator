@@ -31,23 +31,34 @@ a {
 }
 
 // Fonts
-h1,
-h2 {
-  color: $color-gray-dark;
+h1 {
+  color: $color-primary;
+  font-size: $size-title;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
 }
 
-h1 {
-  font-size: $size-title;
-  font-family: "Raleway", sans-serif;
-}
-
 h2 {
+  color: $color-gray-dark;
   font-size: $size-subtitle;
   font-family: "Arsenal", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  max-width: 70ch;
+}
+
+strong {
+  color: $color-gray-dark;
 }
 
 // Classes
-.logo {
-  width: clamp(8rem, 5vw + 1rem, 10rem);
+.container-flex {
+  @include container-flex;
+}
+
+.container {
+  flex: 1;
+  padding: 1rem;
 }

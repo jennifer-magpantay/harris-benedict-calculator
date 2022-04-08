@@ -1,0 +1,10 @@
+@use "../helpers/variables" as *;
+
+header {
+    padding: 1rem 6.33%;
+    border-bottom: 1px solid $color-gray;
+
+    .logo {
+        width: clamp(12rem, 10vw + 5rem, 20rem);
+    }
+}

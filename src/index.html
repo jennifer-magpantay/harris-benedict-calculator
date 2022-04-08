@@ -24,14 +24,74 @@
 
 <body>
     <header>
-        <img src="./assets/bee-calculator-logo.png" alt="Logo">
+        <img class='logo' src="./assets/bee-calculator-logo.png" alt="BEE Calculator Logo">
     </header>
-
-    <h1>BEE Calculator</h1>
 
     <main>
         <div class="container-flex">
-            <p>Hello Stranger</p>
+            <div class="container">
+                <section>
+                    <h1>BEE Calculator</h1>
+                    <h2>An easy way to calculate the energy you need for the day</h2>
+                </section>
+
+                <section>
+                    <p><strong>What is BEE?</strong></p>
+                    <p>BEE stands for Basal Energy Expenditure and it is the energy a person needs to carry out to
+                        complete fundamental metabolic functions and day-to-day tasks.</p>
+                </section>
+
+                <section>
+                    <p><strong>What is the Harris-Benedic Equation?
+                        </strong></p>
+                    <p>It is an equation that takes into consideration gender, height, weight and age to estimate an
+                        individual's basal
+                        metabolic rate.</p>
+                </section>
+
+                <section>
+                    <p><strong>Why I you need that?</strong></p>
+                    <p>This application does not replace an appointment with your GP or your Nutritionist. It is just a
+                        representation of a
+                        calculation that gives an estimative based on a study. But, if you are feeling any side effects
+                        from your day-to-day
+                        routine, for example, excessive tiredness, lack of sleep or appetite, or want to achieve a goal,
+                        such as gain or loose
+                        weight, you must contact them to understand what is going on with your health and to get the
+                        correct advice.</p>
+                </section>
+            </div>
+            <div class="container">
+                <form>
+                    <label for='weight'>Weight</label>
+                    <input type="number" name="weight" id="weight" min="0">
+
+                    <label for='height'>Height</label>
+                    <input type="number" name="height" id="height" min="0">
+
+                    <label for='age'>Age</label>
+                    <input type="number" name="age" id="age" min="0">
+
+                    <label for='gender'>Gender</label>
+                    <select name="gender">
+                        <option value="female" selected>Female</option>
+                        <option value="male">Male</option>
+                    </select>
+
+                    <label for='activity'>Level of Activity</label>
+                    <select name="activity">
+                        <option value="female" selected>Female</option>
+                        <option value="male">Male</option>
+                    </select>
+
+                    <div class="button__container">
+                        <button class='button-reset' type="reset">RESET</button>
+                        <button class='button-submit' type="submit">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+
         </div>
         <div class="root"></div>
     </main>

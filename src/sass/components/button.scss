@@ -1,0 +1,36 @@
+@use "../tools/mixins" as *;
+@use "../helpers/variables" as *;
+
+.button__container {
+    display: flex;
+    margin-left: auto;
+    margin-top: 2rem;
+
+    button {
+        @include buttons;
+        margin-left: 01rem;
+    }
+
+    .button-submit {
+        background-color: $color-primary;
+        color: #ffffff;
+
+        &:hover,
+        &:focus {
+            background-color: darken($color-primary, 20);
+        }
+    }
+
+    .button-reset {
+        background-color: transparent;
+        border: 2px solid $color-primary;
+        color: $color-primary;
+
+        &:hover,
+        &:focus {
+            background-color: darken($color-primary, 20);
+            border-color: darken($color-primary, 20);
+            color: #ffffff;
+        }
+    }
+}
