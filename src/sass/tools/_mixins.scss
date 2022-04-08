@@ -1,0 +1,22 @@
+// buttons
+  @mixin buttons {
+  display: inline-block;
+  padding: 1.5em 3em;
+  border: none;
+  box-shadow: $box-shadow;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+// containers display
+@mixin container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// transitions
+@mixin transitions {
+  transition: all 0.5s ease-in-out;
+}

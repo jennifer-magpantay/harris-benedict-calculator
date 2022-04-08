@@ -1,0 +1,25 @@
+// Queries following mobile first
+
+// TABLET
+$tablet: 768px;
+@mixin tablet {
+  @media (min-width: #{$tablet}){
+    @content;
+  }
+}
+
+// LAPTOP
+$laptop: 1024px;
+@mixin laptop {
+  @media (max-width: #{$laptop}){
+    @content;
+  }
+}
+
+// DESKTOP
+$desktop: 1440px;
+@mixin desktop {
+  @media (min-width: #{$desktop}){
+    @content;
+  }
+}
