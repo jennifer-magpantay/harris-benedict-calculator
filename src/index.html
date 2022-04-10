@@ -36,21 +36,20 @@
                 </section>
 
                 <section>
-                    <p><strong>What is BEE?</strong></p>
+                    <h3>What is BEE?</h3>
                     <p>BEE stands for Basal Energy Expenditure and it is the energy a person needs to carry out to
                         complete fundamental metabolic functions and day-to-day tasks.</p>
                 </section>
 
                 <section>
-                    <p><strong>What is the Harris-Benedic Equation?
-                        </strong></p>
+                    <h3>What is the Harris-Benedic Equation?</h3>
                     <p>It is an equation that takes into consideration gender, height, weight and age to estimate an
                         individual's basal
                         metabolic rate.</p>
                 </section>
 
                 <section>
-                    <p><strong>Why I you need that?</strong></p>
+                    <h3>Why I you need that?</h3>
                     <p>This application does not replace an appointment with your GP or your Nutritionist. It is just a
                         representation of a
                         calculation that gives an estimative based on a study. But, if you are feeling any side effects
@@ -63,25 +62,46 @@
             </div>
             <div class="container">
                 <form>
-                    <label for='weight'>Weight</label>
-                    <input type="number" name="weight" id="weight" min="0">
-
+                    <h3 style="margin-inline: auto">Calculate BEE</h3>
                     <label for='height'>Height</label>
-                    <input type="number" name="height" id="height" min="0">
+                    <div class="container-flex">
+                        <input type="number" name="height" id="height" min="0" placeholder="0">
+                        <select name="height">
+                            <option value="" disabled selected hidden>Choose metric</option>
+                            <option value="in">in</option>
+                            <option value="cm">cm</option>
+                        </select>
+                    </div>
+
+                    <label for='weight'>Weight</label>
+                    <div class="container-flex">
+                        <input type="number" name="weight" id="weight" min="0" placeholder="0">
+                        <select name="weight">
+                            <option value="" disabled selected hidden>Choose metric</option>
+                            <option value="lb">lb</option>
+                            <option value="kg">kg</option>
+                        </select>
+                    </div>
+
 
                     <label for='age'>Age</label>
-                    <input type="number" name="age" id="age" min="0">
+                    <input type="number" name="age" id="age" min="0" placeholder="0">
 
                     <label for='gender'>Gender</label>
                     <select name="gender">
-                        <option value="female" selected>Female</option>
+                        <option value="" disabled selected hidden>Choose gender</option>
+                        <option value="female">Female</option>
                         <option value="male">Male</option>
                     </select>
 
                     <label for='activity'>Level of Activity</label>
                     <select name="activity">
-                        <option value="female" selected>Female</option>
-                        <option value="male">Male</option>
+                        <option value="" disabled selected hidden>Choose level of activities</option>
+                        <option value="none">Little to no exercise</option>
+                        <option value="light">Light exercise 1-3 times per week</option>
+                        <option value="moderate">Moderate exercise 3-5 times per week</option>
+                        <option value="heavy">Heavy physical exercise 5-6 times per week</option>
+                        <option value="upper">Heavy physical exercise 6-7 times per week</option>
                     </select>
 
                     <div class="button__container">

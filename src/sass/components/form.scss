@@ -15,10 +15,31 @@ form {
         margin-top: 1.5rem;
     }
 
+    input {
+        padding: 0.5rem 0.75rem;
+    }
+
+    select {
+        padding: 0.35rem;
+    }
+
     input,
     select {
-        padding: 0.25rem;
+        flex: 1;
         border: 1px solid $color-gray;
         border-radius: 4px;
+        color: $color-gray-dark;
+    }
+
+    ::placeholder {
+        color: $color-gray-dark;
+    }
+
+    option[disabled] {
+        display: none;
+    }
+
+    .container-flex > select {
+        margin-left: 01rem;
     }
 }
