@@ -1,3 +1,17 @@
-main{
-      padding: 1rem 6.33%;
+@use "../tools/responsive.scss" as *;
+
+main {
+      padding: 1rem;
+
+      @include tablet {
+            padding: 1rem 6.33%;
+      }
+
+      .container.content {
+            display: none;
+
+            @include laptop {
+                  display: block;
+            }
+      }
 }

@@ -3,7 +3,7 @@
 // TABLET
 $tablet: 768px;
 @mixin tablet {
-  @media (min-width: #{$tablet}){
+  @media (min-width: #{$tablet}) {
     @content;
   }
 }
@@ -11,7 +11,7 @@ $tablet: 768px;
 // LAPTOP
 $laptop: 1024px;
 @mixin laptop {
-  @media (max-width: #{$laptop}){
+  @media (min-width: #{$laptop}) {
     @content;
   }
 }
@@ -19,7 +19,7 @@ $laptop: 1024px;
 // DESKTOP
 $desktop: 1440px;
 @mixin desktop {
-  @media (min-width: #{$desktop}){
+  @media (min-width: #{$desktop}) {
     @content;
   }
 }

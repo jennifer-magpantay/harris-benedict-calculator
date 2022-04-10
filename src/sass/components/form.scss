@@ -1,15 +1,20 @@
 @use "../helpers/variables" as *;
 @use "../tools/mixins" as *;
+@use "../tools/responsive" as *;
 
 form {
-    width: 80%;
+    width: clamp(35rem, 25vw + 25rem, 50rem);
     display: flex;
     flex-direction: column;
-    padding: 2rem 4rem;
     margin-inline: auto;
+    padding: 2rem 4rem;
     background-color: #ffffff;
     border: 1px solid $color-gray;
     border-radius: 4px;
+
+    @include tablet {
+        width: 50rem;
+    }
 
     label {
         margin-top: 1.5rem;
@@ -25,7 +30,7 @@ form {
 
     input,
     select {
-        flex: 1;
+        // flex: 1;
         border: 1px solid $color-gray;
         border-radius: 4px;
         color: $color-gray-dark;
@@ -39,7 +44,11 @@ form {
         display: none;
     }
 
+    .container-flex > input {
+        width: 50%;
+    }
+
     .container-flex > select {
-        margin-left: 01rem;
+        width: 45%;
     }
 }
