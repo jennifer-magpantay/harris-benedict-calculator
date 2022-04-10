@@ -27,10 +27,41 @@
 
 <body>
     <header>
-        <img class='logo' src="./assets/bee-calculator-logo.png" alt="BEE Calculator Logo">
-        <span class="material-icons icon menu">
-            menu
-        </span>
+        <a href="/">
+            <img class='logo' src="./assets/bee-calculator-logo.png" alt="BEE Calculator Logo">
+        </a>
+        <button class='header__button-toggle' id="nav-button-toggle" aria-controls="navbar-menu"
+            aria-expanded="false">Menu&nbsp;
+            <span class="material-icons icon menu" id="menu">
+                menu
+            </span>
+        </button>
+
+        <!-- nav bar for small screens -->
+        <nav class="navbar-menu" id="navbar-menu" data-visible="false">
+            <ul>
+                <li>
+                    <a href="/what-it-is.html">
+                        <span aria-hidden="true">What is BEE?</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/equation.html">
+                        <span aria-hidden="true">What is the Harris-Benedic Equation?</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/why-do-you-need.html">
+                        <span aria-hidden="true">Why do you need that?</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/calculation.html">
+                        <span aria-hidden="true">How BEE is calculated?</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -66,7 +97,7 @@
                         correct advice.</p>
                 </section>
             </div>
-            
+
             <div class="container">
                 <form>
                     <h3 style="margin-inline: auto">Calculate BEE</h3>

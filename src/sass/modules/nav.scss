@@ -1,0 +1,39 @@
+@use "../helpers/variables.scss" as *;
+@use "../tools/responsive.scss" as *;
+
+.navbar-menu {
+    position: fixed;
+    inset: 0 0 0 60%;
+    z-index: 5;
+    padding: 1rem 6.33% 02rem 02rem;
+    background-color: #fff;
+    transform: translateX(100%);
+
+    @include laptop {
+        display: none;
+    }
+
+    &[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    ul {
+        position: absolute;
+        top: 15%;
+    }
+
+    .menu-close {
+        display: block;
+        text-align: end;
+    }
+
+    li {
+        margin: 01rem;
+        padding: 0.5rem;
+    }
+    li:hover,
+    li:focus {
+        background-color: $color-background;
+        font-weight: bold;
+    }
+}

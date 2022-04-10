@@ -4,14 +4,25 @@
 
 header {
     @include container-flex;
+    position: relative;
     padding: 1rem 6.33%;
     border-bottom: 1px solid $color-gray;
 
     .logo {
         width: clamp(12rem, 10vw + 5rem, 20rem);
+        cursor: pointer;
     }
 
-    .menu {
+    .header__button-toggle {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 6.33%;
+        z-index: 100;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+
         @include laptop {
             display: none;
         }

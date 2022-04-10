@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BEE Harris-Benedict Calculator" />
+    <meta name="keywords" content="Harris-Benedict, BEE, Basal energy expenditure, calories, health">
+    <meta name="author" content="Jennifer Magpantay">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal:wght@700&family=Hind:wght@400;500&family=Raleway:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Equation | BEE Harris-Benedict Calculator</title>
+</head>
+
+<body>
+    <header>
+    <a href="/">
+        <img class='logo' src="./assets/bee-calculator-logo.png" alt="BEE Calculator Logo">
+    </a>
+        <button class='header__button-toggle' id="nav-button-toggle" aria-controls="navbar-menu"
+            aria-expanded="false">Menu&nbsp;
+            <span class="material-icons icon menu" id="menu">
+                menu
+            </span>
+        </button>
+
+        <!-- nav bar for small screens -->
+        <nav class="navbar-menu" id="navbar-menu" data-visible="false">
+            <ul>
+                <li>
+                    <span aria-hidden="true">What is BEE?</span>
+                </li>
+                <li>
+                    <span aria-hidden="true">What is the Harris-Benedic Equation?</span>
+                </li>
+                <li>
+                    <span aria-hidden="true">Why do you need that?</span>
+                </li>
+                <li>
+                    <a href="/calculation.html">
+                        <span aria-hidden="true">How BEE is calculated?</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Equation</h1>
+        <div class="root"></div>
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
