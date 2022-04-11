@@ -65,6 +65,12 @@
     </header>
 
     <main>
+        <!-- intro section for small screens only -->
+        <section class="section-small-screen">
+            <h1>BEE Calculator</h1>
+            <h2>An easy way to calculate the energy you need for the day</h2>
+        </section>
+
         <div class="container-flex">
             <div class="container content">
                 <section>
@@ -99,59 +105,89 @@
             </div>
 
             <div class="container">
-                <form>
-                    <h3 style="margin-inline: auto">Calculate BEE</h3>
-                    <label for='height'>Height</label>
-                    <div class="container-flex">
-                        <input type="number" name="height" id="height" min="0" placeholder="0">
-                        <select name="height">
-                            <option value="" disabled selected hidden>Choose metric</option>
-                            <option value="in">in</option>
-                            <option value="cm">cm</option>
-                        </select>
+                <div class="content__container">
+                    <div class="data__container" id='data-container' data-visible="false">
+                        <!-- header -->
+                        <h3 id="data-title" class="data__title">Your Total Daily Basal Energy Expenditure (BEE):</h3>
+                        <p id="data-subtitle" class="data__subtitle"></p>
+                        <hr>
+                        <!-- body content -->
+                        <div id="data-root" class="data-root">
+                        </div>
+                        <!-- footer -->
+                        <div class="data__footer">
+                            <p>This calculation result is based on equation study, and it is not a prescription for your
+                                health and nutrition. Consult
+                                with your doctor or Nutritionist before making any changes to your diet.</p>
+                            <p><i>* Calculation based on the revised Harris-Benedict equation by Roza and Shizgal.</i>
+                            </p>
+                            <p>Do you want to know how BEE is calculated? Click <a
+                                    href="/calculation.html"><strong>here</strong></a>
+                            </p>
+                            <button id="data-button" class='data__button'>
+                                Try again
+                            </button>
+                        </div>
                     </div>
 
-                    <label for='weight'>Weight</label>
-                    <div class="container-flex">
-                        <input type="number" name="weight" id="weight" min="0" placeholder="0">
-                        <select name="weight">
-                            <option value="" disabled selected hidden>Choose metric</option>
-                            <option value="lb">lb</option>
-                            <option value="kg">kg</option>
-                        </select>
+                    <div class="form__container" id='form-container' data-visible="true">
+                        <h3 class="form__title">Calculate BEE</h3>
+                        <hr>
+                        <form id="form">
+                            <label for='height'>Height</label>
+                            <div class="container-flex">
+                                <input type="number" name="height" id="height" min="0" placeholder="0">
+                                <select name="height">
+                                    <option value="" disabled selected hidden>Choose metric</option>
+                                    <option value="in">in</option>
+                                    <option value="cm">cm</option>
+                                </select>
+                            </div>
+
+                            <label for='weight'>Weight</label>
+                            <div class="container-flex">
+                                <input type="number" name="weight" id="weight" min="0" placeholder="0">
+                                <select name="weight">
+                                    <option value="" disabled selected hidden>Choose metric</option>
+                                    <option value="lb">lb</option>
+                                    <option value="kg">kg</option>
+                                </select>
+                            </div>
+
+                            <label for='age'>Age</label>
+                            <input type="number" name="age" id="age" min="0" placeholder="0">
+
+                            <label for='gender'>Gender</label>
+                            <select name="gender" id="gender">
+                                <option value="" disabled selected hidden>Choose gender</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>
+
+                            <label for='activity'>Level of Activity</label>
+                            <select name="activity" id="activity">
+                                <option value="" disabled selected hidden>Choose level of activities</option>
+                                <option value="1.2">Little to no exercise</option>
+                                <option value="1.375">Light exercise 1-2 times per week</option>
+                                <option value="1.55">Moderate exercise 3-5 times per week</option>
+                                <option value="1.725">Heavy physical exercise 6-7 times per week</option>
+                                <option value="1.9">Hard daily exercise and physical job or two times a day training
+                                </option>
+                            </select>
+
+                            <div class="button__container">
+                                <button class='button-reset' type="reset">RESET</button>
+                                <button class='button-submit' type="submit">Submit</button>
+                            </div>
+                        </form>
                     </div>
-
-
-                    <label for='age'>Age</label>
-                    <input type="number" name="age" id="age" min="0" placeholder="0">
-
-                    <label for='gender'>Gender</label>
-                    <select name="gender">
-                        <option value="" disabled selected hidden>Choose gender</option>
-                        <option value="female">Female</option>
-                        <option value="male">Male</option>
-                    </select>
-
-                    <label for='activity'>Level of Activity</label>
-                    <select name="activity">
-                        <option value="" disabled selected hidden>Choose level of activities</option>
-                        <option value="none">Little to no exercise</option>
-                        <option value="light">Light exercise 1-3 times per week</option>
-                        <option value="moderate">Moderate exercise 3-5 times per week</option>
-                        <option value="heavy">Heavy physical exercise 5-6 times per week</option>
-                        <option value="upper">Heavy physical exercise 6-7 times per week</option>
-                    </select>
-
-                    <div class="button__container">
-                        <button class='button-reset' type="reset">RESET</button>
-                        <button class='button-submit' type="submit">Submit</button>
-                    </div>
-
-                </form>
+                </div>
             </div>
 
-        </div>
-        <div class="root"></div>
+
+
+
+
     </main>
     <script src="./js/index.js"></script>
 </body>

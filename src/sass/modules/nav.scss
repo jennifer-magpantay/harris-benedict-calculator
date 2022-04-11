@@ -1,5 +1,6 @@
-@use "../helpers/variables.scss" as *;
-@use "../tools/responsive.scss" as *;
+@use "../helpers/variables" as *;
+@use "../tools/responsive" as *;
+@use "../tools/mixins" as *;
 
 .navbar-menu {
     position: fixed;
@@ -8,6 +9,7 @@
     padding: 1rem 6.33% 02rem 02rem;
     background-color: #fff;
     transform: translateX(100%);
+    @include transitions;
 
     @include laptop {
         display: none;

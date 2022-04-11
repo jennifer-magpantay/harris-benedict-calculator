@@ -1,4 +1,6 @@
-@use "../tools/responsive.scss" as *;
+@use "../tools/responsive" as *;
+@use "../helpers/variables" as *;
+@use "../tools/mixins" as *;
 
 main {
       padding: 1rem;
@@ -12,6 +14,59 @@ main {
 
             @include laptop {
                   display: block;
+            }
+      }
+
+      .content__container {
+            width: 90%;
+            margin-inline: auto;
+            padding: 2rem 4rem;
+            background-color: #ffffff;
+            border: 1px solid $color-gray;
+            border-radius: 4px;
+      }
+}
+
+.data__container[data-visible="false"] {
+      display: none;
+}
+
+.data__container {
+      .data__title,
+      .data__subtitle {
+            display: block;
+            margin-bottom: 01rem;
+            text-align: center;
+      }
+
+      hr {
+            margin: 02rem 0;
+      }
+
+      .data-root {
+            margin: 01rem 0;
+
+            h3 {
+                  display: block;
+                  margin-bottom: 01rem;
+                  text-align: center;
+            }
+      }
+
+      .data__footer > p {
+            margin-bottom: 02rem;
+      }
+
+      .data__button {
+            @include buttons;
+            display: block;
+            margin-inline: auto;
+            background-color: $color-analogous-2;
+            color: #ffff;
+
+            &:hover,
+            &:focus {
+                  background-color: darken($color-analogous-2, 15);
             }
       }
 }

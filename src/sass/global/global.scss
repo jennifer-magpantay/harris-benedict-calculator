@@ -49,6 +49,9 @@ h3 {
   color: $color-gray-dark;
 }
 
+hr {
+  margin: 01rem 0;
+}
 p {
   max-width: 70ch;
 }
@@ -74,4 +77,22 @@ ul {
 .container {
   flex: 1;
   padding: 1rem;
+}
+
+.link {
+  display: block;
+  width: fit-content;
+  padding: 01rem 03rem;
+  border-radius: 5rem;
+  background-color: $color-analogous-2;
+  color: #ffff;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-analogous-2, 15);
+  }
 }
