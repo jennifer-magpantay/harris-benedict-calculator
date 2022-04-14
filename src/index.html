@@ -134,46 +134,52 @@
                         <h3 class="form__title">Calculate BEE</h3>
                         <hr>
                         <form id="form">
-                            <label for='height'>Height</label>
                             <div class="container-flex">
+                                <label for="unit">Unit system</label>
+                                <select name="unit" id="unit">
+                                    <option value="" disabled selected hidden>Choose unit</option>
+                                    <option value="metric">Metric</option>
+                                    <option value="imperial">Imperial</option>
+                                </select>
+                            </div>
+
+                            <div class="container-flex">
+                                <label for='height'>Height in <span id="height-unit">cm</span></label>
                                 <input type="number" name="height" id="height" min="0" placeholder="0">
-                                <select name="height">
-                                    <option value="" disabled selected hidden>Choose metric</option>
-                                    <option value="in">in</option>
-                                    <option value="cm">cm</option>
-                                </select>
                             </div>
 
-                            <label for='weight'>Weight</label>
                             <div class="container-flex">
+                                <label for='weight'>Weight in <span id="weight-unit">kg</span></label>
                                 <input type="number" name="weight" id="weight" min="0" placeholder="0">
-                                <select name="weight">
-                                    <option value="" disabled selected hidden>Choose metric</option>
-                                    <option value="lb">lb</option>
-                                    <option value="kg">kg</option>
+                            </div>
+
+                            <div class="container-flex">
+                                <label for='age'>Age in years</label>
+                                <input type="number" name="age" id="age" min="0" placeholder="0">
+                            </div>
+
+                            <div class="container-flex">
+                                <label for='gender'>Gender</label>
+                                <select name="gender" id="gender">
+                                    <option value="" disabled selected hidden>Choose gender</option>
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
                                 </select>
                             </div>
 
-                            <label for='age'>Age</label>
-                            <input type="number" name="age" id="age" min="0" placeholder="0">
-
-                            <label for='gender'>Gender</label>
-                            <select name="gender" id="gender">
-                                <option value="" disabled selected hidden>Choose gender</option>
-                                <option value="female">Female</option>
-                                <option value="male">Male</option>
-                            </select>
-
-                            <label for='activity'>Level of Activity</label>
-                            <select name="activity" id="activity">
-                                <option value="" disabled selected hidden>Choose level of activities</option>
-                                <option value="1.2">Little to no exercise</option>
-                                <option value="1.375">Light exercise 1-2 times per week</option>
-                                <option value="1.55">Moderate exercise 3-5 times per week</option>
-                                <option value="1.725">Heavy physical exercise 6-7 times per week</option>
-                                <option value="1.9">Hard daily exercise and physical job or two times a day training
-                                </option>
-                            </select>
+                            <div class="container-flex">
+                                <label for='activity'>Level of Activity</label>
+                                <select name="activity" id="activity">
+                                    <option value="" disabled selected hidden>Choose level of activities</option>
+                                    <option value="1.2">Little to no exercise</option>
+                                    <option value="1.375">Light exercise 1-2 times per week</option>
+                                    <option value="1.55">Moderate exercise 3-5 times per week</option>
+                                    <option value="1.725">Heavy physical exercise 6-7 times per week</option>
+                                    <option value="1.9">Hard daily exercise and physical job or two times a
+                                        day training
+                                    </option>
+                                </select>
+                            </div>
 
                             <div class="button__container">
                                 <button class='button-reset' type="reset">RESET</button>
@@ -183,11 +189,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
     </main>
     <script src="./js/index.js"></script>
 </body>
