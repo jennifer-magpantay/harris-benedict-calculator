@@ -17,40 +17,37 @@ form {
     display: flex;
     flex-direction: column;
     margin-inline: auto;
-}
 
-label {
-    margin-top: 1.5rem;
-}
+    .container-flex {
+        margin-top: 01rem;
+    }
 
-input {
-    padding: 0.5rem 0.75rem;
-}
+    label {
+        width: 30%;
+        // margin-right: 01rem;
+    }
 
-select {
-    padding: 0.35rem;
-}
+    input {
+        padding: 0.5rem 0.75rem;
+    }
 
-input,
-select {
-    // flex: 1;
-    border: 1px solid $color-gray;
-    border-radius: 4px;
-    color: $color-gray-dark;
-}
+    select {
+        padding: 0.35rem;
+    }
 
-::placeholder {
-    color: $color-gray-dark;
-}
+    input,
+    select {
+        width: 70%;
+        border: 1px solid $color-gray;
+        border-radius: 4px;
+        color: $color-gray-dark;
+    }
 
-option[disabled] {
-    display: none;
-}
+    ::placeholder {
+        color: $color-gray-dark;
+    }
 
-.container-flex > input {
-    width: 50%;
-}
-
-.container-flex > select {
-    width: 45%;
+    option[disabled] {
+        display: none;
+    }
 }

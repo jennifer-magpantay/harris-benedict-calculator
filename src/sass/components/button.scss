@@ -12,24 +12,24 @@
     }
 
     .button-submit {
-        background-color: $color-primary;
+        background-color: $color-analogous-2;
         color: #ffffff;
 
         &:hover,
         &:focus {
-            background-color: darken($color-primary, 20);
+            background-color: darken($color-analogous-2, 20);
         }
     }
 
     .button-reset {
         background-color: transparent;
-        border: 2px solid $color-primary;
-        color: $color-primary;
+        border: 2px solid $color-analogous-2;
+        color: $color-analogous-2;
 
         &:hover,
         &:focus {
-            background-color: darken($color-primary, 20);
-            border-color: darken($color-primary, 20);
+            background-color: darken($color-analogous-2, 20);
+            border-color: darken($color-analogous-2, 20);
             color: #ffffff;
         }
     }
