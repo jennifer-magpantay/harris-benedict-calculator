@@ -16,18 +16,24 @@ function handleClickMenu() {
   navButtonToggle.addEventListener("click", () => manageMenu());
 }
 
+function getUnitSystemOption() {
+  const unit = document.querySelector("#unit");
+  const unitOption = unit.options[unit.selectedIndex].value;
+  return unitOption;
+}
+
 function handleClickUnitSystemForm() {
   const unit = document.querySelector("#unit");
 
   unit.addEventListener("change", () => {
     // get seleted option
-    const unitOption = unit.options[unit.selectedIndex].value;
+    const unitOption = getUnitSystemOption();
 
     // get span values to be changed
     const heightUnit = document.querySelector("#height-unit");
     const weightUnity = document.querySelector("#weight-unit");
     unitOption === "imperial"
-      ? ((heightUnit.innerHTML = "inch"), (weightUnity.innerHTML = "lbs"))
+      ? ((heightUnit.innerHTML = "in"), (weightUnity.innerHTML = "lbs"))
       : ((heightUnit.innerHTML = "cm"), (weightUnity.innerHTML = "kg"));
   });
 }
@@ -82,14 +88,11 @@ function manageDataContainerContent() {
 
 function getFormValues() {
   // get values
-  const unit = document.querySelector("#unit");
-  const unitOption = unit.options[unit.selectedIndex].value;
-
   const height = document.querySelector("#height").value;
   const weight = document.querySelector("#weight").value;
   const age = document.querySelector("#age").value;
   const gender = document.querySelector("#gender");
-  const genderOption = gender.options[gender.selectedIndex].text;
+  const genderOption = gender.options[gender.selectedIndex].value;
 
   const activity = document.querySelector("#activity");
   const activityOption = activity.options[activity.selectedIndex];
@@ -97,7 +100,7 @@ function getFormValues() {
 
   // return user Input for calculation
   const userInput = {
-    unitSystem: unitOption,
+    unitSystem: getUnitSystemOption(),
     height,
     weight,
     age,
@@ -111,17 +114,24 @@ function getFormValues() {
 
 function calculateBEEValue(input) {
   const { unitSystem, height, weight, age, gender } = input;
-
   let beeValue = 0;
-  // if gender is male, calculate:
+
+  let wght = weight;
+  let hght = height;
+
+  if (unitSystem === "imperial") {
+    // convert inches to cm, and lbs to kg
+    wght = Math.ceil(wght * 0.45359237);
+    hght = Math.ceil(hght * 2.54);
+  }
+
   if (gender === "male") {
-    beeValue = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
+    beeValue = 88.362 + 13.397 * wght + 4.799 * hght - 5.677 * age;
+  } else {
+    beeValue = 447.593 + 9.247 * wght + 3.098 * hght - 4.33 * age;
   }
-  // otherwise, then calculate;
-  else {
-    beeValue = 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
-  }
-  return beeValue.toFixed(0);
+
+  return beeValue;
 }
 
 function calculateCaloriesResult(input, beeValue) {
@@ -137,16 +147,16 @@ function renderHeaderResults(result) {
 }
 
 function renderUserInput(input) {
-  const { unitSystem, height, weight, age, gender } = input;
+  const { unitSystem, height, weight, age, gender, activity } = input;
 
   const dataRoot = document.querySelector("#data-root");
   let results = `
   <h3>Individual Results</h3>
-  <p>Height: ${height} ${unitSystem === "metric" ? "cm" : "inch"}</p>
+  <p>Height: ${height} ${unitSystem === "metric" ? "cm" : "inc"}</p>
   <p>Weight: ${weight} ${unitSystem === "metric" ? "kg" : "lbs"}</p>
   <p>Gender: ${gender}</p>
   <p>Age: ${age} years old</p>
-  <p>Activity Level: ${activity} cm</p>
+  <p>Activity Level: ${activity}</p>
   <br>
   `;
 
@@ -154,12 +164,14 @@ function renderUserInput(input) {
 }
 
 function clearFormInput() {
+  const unit = document.querySelector("#unit");
   const height = document.querySelector("#height");
   const weight = document.querySelector("#weight");
   const age = document.querySelector("#age");
   const gender = document.querySelector("#gender");
   const activity = document.querySelector("#activity");
 
+  unit.selectedIndex = 0;
   height.value = 0;
   weight.value = 0;
   age.value = 0;
