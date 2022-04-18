@@ -6,11 +6,11 @@ This application does not replace an appointment with a doctor or Nutritionist.
 
 ## Prototype
 
-![BEE Calculator Home](https://user-images.githubusercontent.com/56962997/162424618-b1db419d-3c02-4554-808c-4f6c22a287ab.png)
-
 Check on Figma: [Design](https://www.figma.com/file/A8kgD6WMq7hPkf1OSfVwBp/BEE-calculator?node-id=0%3A1) and [Proptotype](https://www.figma.com/proto/A8kgD6WMq7hPkf1OSfVwBp/BEE-calculator?node-id=1%3A2&scaling=contain&page-id=0%3A1&starting-point-node-id=1%3A2)
 
 ## Preview
+
+![calories-app](https://user-images.githubusercontent.com/56962997/163829796-bffc6bc9-af58-41fd-b065-7eade9a54870.gif)
 
 ## Features
 
