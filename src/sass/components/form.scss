@@ -6,6 +6,10 @@
     display: none;
 }
 
+.form__container {
+    padding: 03rem 0;
+}
+
 .form__title {
     display: block;
     margin-bottom: 01rem;
@@ -18,7 +22,7 @@ form {
     flex-direction: column;
     margin-inline: auto;
 
-    .container-flex {
+    .container-flex-center {
         margin-top: 01rem;
     }
 

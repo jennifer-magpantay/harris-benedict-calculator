@@ -22,46 +22,55 @@
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>What It Is | BEE Harris-Benedict Calculator</title>
+    <title>What It Is | Daily Calories Calculator</title>
 </head>
 
 <body>
-    <header>
-    <a href="/">
-        <img class='logo' src="./assets/bee-calculator-logo.png" alt="BEE Calculator Logo">
-    </a>
-        <button class='header__button-toggle' id="nav-button-toggle" aria-controls="navbar-menu"
-            aria-expanded="false">Menu&nbsp;
-            <span class="material-icons icon menu" id="menu">
-                menu
-            </span>
-        </button>
-
-        <!-- nav bar for small screens -->
-        <nav class="navbar-menu" id="navbar-menu" data-visible="false">
-            <ul>
-                <li>
-                    <span aria-hidden="true">What is BEE?</span>
-                </li>
-                <li>
-                    <span aria-hidden="true">What is the Harris-Benedic Equation?</span>
-                </li>
-                <li>
-                    <span aria-hidden="true">Why do you need that?</span>
-                </li>
-                <li>
-                    <a href="/calculation.html">
-                        <span aria-hidden="true">How BEE is calculated?</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <header id="header"></header>
 
     <main>
-        
-    <h1>What it is</h1>
-        <div class="root"></div>
+        <section id="intro"></section>
+
+        <section>
+            <section>
+                <h3>What is the Daily Calorie calculator?</h3>
+                <p>It is a mathematical equation for estimating the total calories
+                    a person needs, known as Total
+                    Energy Expenditure (TEE),
+                    considering their Basal Metabolic Rate (BMR) and Physical Activities Level (PAL).</p>
+            </section>
+
+            <section>
+                <h3>What is Basal Metabolic Rate (BMR)?</h3>
+                <p>It is the energy a person needs to carry out to
+                    complete fundamental metabolic functions, such as brain function or breath, in a period of time,
+                    without considering the energy that is spent on activities of the
+                    day. It is calculated by using the Harris-Benedict equation.</p>
+            </section>
+
+            <section>
+                <h3>What is the Harris-Benedic Equation?</h3>
+                <p>It is an equation that takes into consideration height, weight, age and gender to estimate an
+                    individual's basal
+                    metabolic rate.</p>
+                <p>The result of this equation multiplied by the PAL factor is used to calculate TEE.</p>
+            </section>
+
+            <section>
+                <h3>What is Physical Activities Level (PAL)?</h3>
+                <p>PAL is a number multiplier used to estimate a person's TEE in combination with the BMR. It can be
+                    also used to compute the amount of food energy a
+                    person needs to consume in order to maintain a particular lifestyle.</p>
+            </section>
+
+            <div class="link__container">
+                <span class="material-icons icons">
+                    arrow_back
+                </span>
+                <a href="/" class="link__container">
+                    Go back to home</a>
+            </div>
+        </section>
     </main>
     <script src="./js/index.js"></script>
 </body>

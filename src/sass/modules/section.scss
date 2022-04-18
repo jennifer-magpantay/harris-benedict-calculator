@@ -2,12 +2,20 @@
 
 section {
     margin-bottom: 2rem;
-}
 
-.section-small-screen {
-    padding: 1rem 6.33%;
+    p {
+        margin-bottom: 01rem;
+    }
 
-    @include laptop {
-        display: none;
+    .link__container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 01rem 0;
+
+        a {
+            font-weight: bold;
+        }
     }
 }
+

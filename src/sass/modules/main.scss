@@ -3,11 +3,7 @@
 @use "../tools/mixins" as *;
 
 main {
-      padding: 1rem;
-
-      @include tablet {
-            padding: 1rem 6.33%;
-      }
+      padding: 1rem 6.33%;
 
       .container.content {
             display: none;
@@ -18,7 +14,7 @@ main {
       }
 
       .content__container {
-            width: 90%;
+            max-width: 50rem;
             margin-inline: auto;
             padding: 2rem 4rem;
             background-color: #ffffff;
@@ -32,6 +28,8 @@ main {
 }
 
 .data__container {
+      padding: 03rem 0;
+
       .data__title,
       .data__subtitle {
             display: block;
@@ -44,7 +42,7 @@ main {
       }
 
       .data-root {
-            margin: 01rem 0;
+            margin: 01rem 0 0 0;
 
             h3 {
                   display: block;

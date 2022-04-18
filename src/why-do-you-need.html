@@ -22,46 +22,34 @@
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>What It Is | BEE Harris-Benedict Calculator</title>
+    <title>What Do You Need it? | Daily Calories Calculator</title>
 </head>
 
 <body>
-    <header>
-        <a href="/">
-            <img class='logo' src="./assets/bee-calculator-logo.png" alt="BEE Calculator Logo">
-        </a>
-        <button class='header__button-toggle' id="nav-button-toggle" aria-controls="navbar-menu"
-            aria-expanded="false">Menu&nbsp;
-            <span class="material-icons icon menu" id="menu">
-                menu
-            </span>
-        </button>
-
-        <!-- nav bar for small screens -->
-        <nav class="navbar-menu" id="navbar-menu" data-visible="false">
-            <ul>
-                <li>
-                    <span aria-hidden="true">What is BEE?</span>
-                </li>
-                <li>
-                    <span aria-hidden="true">What is the Harris-Benedic Equation?</span>
-                </li>
-                <li>
-                    <span aria-hidden="true">Why do you need that?</span>
-                </li>
-                <li>
-                    <a href="/calculation.html">
-                        <span aria-hidden="true">How BEE is calculated?</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <header id="header"></header>
 
     <main>
+        <section id="intro"></section>
 
-        <h1>Why do you need that</h1>
-        <div class="root"></div>
+        <section>
+            <h3>Why do you need that?</h3>
+            <p>This application does not replace an appointment with your GP or your Nutritionist. It is just a
+                representation of a
+                calculation that gives an estimative based on a study. But, if you are feeling any side effects
+                from your day-to-day
+                routine, for example, excessive tiredness, lack of sleep or appetite, or want to achieve a goal,
+                such as gain or loose
+                weight, you must contact them to understand what is going on with your health and to get the
+                correct advice.</p>
+
+            <div class="link__container">
+                <span class="material-icons icons">
+                    arrow_back
+                </span>
+                <a href="/" class="link__container">
+                    Go back to home</a>
+            </div>
+        </section>
     </main>
     <script src="./js/index.js"></script>
 </body>

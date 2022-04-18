@@ -26,19 +26,25 @@ body {
 a {
   color: inherit;
   cursor: pointer;
+  font-size: $size-text;
   font-weight: 500;
   @include transitions;
 }
 
 // Fonts
 h1 {
+  width: 25ch;
+  margin: 02rem 0 01rem 0;
   color: $color-primary;
   font-size: $size-title;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
+  line-height: 1;
+  text-transform: capitalize;
 }
 
 h2 {
+  margin-bottom: 03rem;
   color: $color-gray-dark;
   font-size: $size-subtitle;
   font-family: "Arsenal", sans-serif;
@@ -52,8 +58,9 @@ h3 {
 hr {
   margin: 01rem 0;
 }
+
 p {
-  max-width: 70ch;
+  max-width: 90ch;
 }
 
 strong {
@@ -74,9 +81,13 @@ ul {
   @include container-flex;
 }
 
+.container-flex-center {
+  @include container-flex-center;
+}
+
 .container {
   flex: 1;
-  padding: 1rem;
+  // padding: 1rem;
 }
 
 .link {

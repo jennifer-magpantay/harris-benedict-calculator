@@ -1,0 +1,33 @@
+@use "../helpers/variables" as *;
+@use "../tools/responsive" as *;
+
+table {
+    display: block;
+    width: auto;
+    margin: 02rem 0;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    text-align: left;
+    overflow-x: auto;
+    white-space: nowrap;
+    
+    caption {
+        font-style: italic;
+    }
+
+    thead {
+        background-color: $color-gray-light;
+    }
+
+    thead,
+    tbody,
+    td,
+    th {
+        padding: 1rem;
+        border: 01px solid $color-gray;
+    }
+
+    tr:nth-child(even) {
+        background-color: $color-gray-light;
+    }
+}

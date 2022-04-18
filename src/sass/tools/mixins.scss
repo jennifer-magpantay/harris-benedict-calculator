@@ -18,10 +18,14 @@
 }
 
 // containers display
-@mixin container-flex {
+@mixin container-flex-center {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@mixin container-flex {
+  display: flex;
 }
 
 // transitions

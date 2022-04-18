@@ -8,6 +8,7 @@
     z-index: 5;
     padding: 1rem 6.33% 02rem 02rem;
     background-color: #fff;
+    box-shadow: $box-shadow-left;
     transform: translateX(100%);
     @include transitions;
 
