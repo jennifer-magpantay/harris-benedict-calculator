@@ -1,13 +1,20 @@
 # harris-benedict-calculator
 
 App to calculate how much energy the body needs to sustain its normal function based on Harris-Benedict equation.
- 
-## Prototype 
+
+This application does not replace an appointment with a doctor or Nutritionist.
+
+## Prototype
+
 ![BEE Calculator Home](https://user-images.githubusercontent.com/56962997/162424618-b1db419d-3c02-4554-808c-4f6c22a287ab.png)
 
 Check on Figma: [Design](https://www.figma.com/file/A8kgD6WMq7hPkf1OSfVwBp/BEE-calculator?node-id=0%3A1) and [Proptotype](https://www.figma.com/proto/A8kgD6WMq7hPkf1OSfVwBp/BEE-calculator?node-id=1%3A2&scaling=contain&page-id=0%3A1&starting-point-node-id=1%3A2)
 
 ## Preview
+
+## Features
+
+- Responsive application
 
 ## Technologies
 
@@ -19,17 +26,48 @@ Create an application to apply the main concepts of clean code, project structur
 
 ## Status
 
-In development.
+Project finished.
 
-## Features
+## Run locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/jennifer-magpantay/harris-benedict-calculator.git
+```
+
+Go to the project directory
+
+```bash
+  cd harris-benedict-calculator
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm start
+```
+
+npm start - Copies src files to public and starts Browsersync server at localhost:3000
+npm run build - Copies files to public and autoprefixes/minifies css
 
 ## TODO
+
+- Run some test
+- Upgrade equations to the nearest studies, if there is one
+- Add more calculations to cover other results, such as Body Mass Index (BMI)
 
 ## Author
 
 Developed by Jennifer Magpantay.
 
-**Reach me out** 
+**Reach me out**
 
 [![Linkedin Badge](https://img.shields.io/badge/-Jennifer-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jennifermagpantay/)](https://www.linkedin.com/in/jennifermagpantay/) [![Gmail Badge](https://img.shields.io/badge/-jennifer.magpantay@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jennifer.magpantay@gmail.com)](mailto:jennifer.magpantay@gmail.com)
 
