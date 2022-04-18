@@ -3,11 +3,64 @@ window.addEventListener("load", () => {
 });
 
 function init() {
-  // once page is loaded,enable the following event functions:
+  // once page is loaded,enable components and the following event functions:
+  loadingHeader();
+  loadingIntro();
+
   handleClickMenu();
   handleClickUnitSystemForm();
   handleSubmitForm();
   handleFormAfterResults();
+}
+
+// loading components
+function loadingHeader() {
+  const header = document.querySelector("#header");
+
+  const content = `
+  <a href="/">
+    <img class='logo' src="./assets/logo.png" alt="Calculator Logo">
+  </a>
+  <button class='header__button-toggle' id="nav-button-toggle" aria-controls="navbar-menu"
+            aria-expanded="false">Menu&nbsp;
+    <span class="material-icons icon menu" id="menu">
+                menu
+    </span>
+  </button>
+
+  <!-- nav bar for small screens -->
+  <nav class="navbar-menu" id="navbar-menu" data-visible="false">
+    <ul>
+      <li>
+        <a href="/what-it-is.html">
+          <span aria-hidden="true">What is the Daily Calories Calculator?</span>
+        </a>
+      </li>
+     <li>
+        <a href="/why-do-you-need.html">
+          <span aria-hidden="true">Why do you need that?</span>
+        </a>
+      </li>
+      <li>
+        <a href="/how-is-calculated.html">
+          <span aria-hidden="true">How daily calories are calculated?</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  `;
+
+  header.innerHTML = content;
+}
+
+function loadingIntro() {
+  const intro = document.querySelector("#intro");
+  const content = `
+  <h1>Daily calories calculator</h1>
+  <h2>An easy way to calculate the energy you need for the day</h2>
+  `;
+
+  intro.innerHTML = content;
 }
 
 // event functions
@@ -112,9 +165,9 @@ function getFormValues() {
   return userInput;
 }
 
-function calculateBEEValue(input) {
+function calculateBMRValue(input) {
   const { unitSystem, height, weight, age, gender } = input;
-  let beeValue = 0;
+  let bmrValue = 0;
 
   let wght = weight;
   let hght = height;
@@ -126,17 +179,17 @@ function calculateBEEValue(input) {
   }
 
   if (gender === "male") {
-    beeValue = 88.362 + 13.397 * wght + 4.799 * hght - 5.677 * age;
+    bmrValue = 88.362 + 13.397 * wght + 4.799 * hght - 5.677 * age;
   } else {
-    beeValue = 447.593 + 9.247 * wght + 3.098 * hght - 4.33 * age;
+    bmrValue = 447.593 + 9.247 * wght + 3.098 * hght - 4.33 * age;
   }
 
-  return beeValue;
+  return bmrValue;
 }
 
-function calculateCaloriesResult(input, beeValue) {
+function calculateCaloriesResult(input, bmrValue) {
   const { activityFactor } = input;
-  const caloriesResult = beeValue * activityFactor;
+  const caloriesResult = bmrValue * activityFactor;
 
   return caloriesResult;
 }
@@ -147,7 +200,9 @@ function renderHeaderResults(result) {
 }
 
 function renderUserInput(input) {
-  const { unitSystem, height, weight, age, gender, activity } = input;
+  const { unitSystem, height, weight, age, gender, activity, activityFactor } =
+    input;
+  const bmrValue = calculateBMRValue(input);
 
   const dataRoot = document.querySelector("#data-root");
   let results = `
@@ -156,7 +211,9 @@ function renderUserInput(input) {
   <p>Weight: ${weight} ${unitSystem === "metric" ? "kg" : "lbs"}</p>
   <p>Gender: ${gender}</p>
   <p>Age: ${age} years old</p>
-  <p>Activity Level: ${activity}</p>
+  <p>Physical Activity Level: ${activity}</p>
+  <p>Physical Activity Level Factor: ${activityFactor}</p>
+  <p>Basal Metabolic Rate (BMR): ${bmrValue}</p>
   <br>
   `;
 
@@ -181,8 +238,8 @@ function clearFormInput() {
 
 function renderResultsContent() {
   const input = getFormValues();
-  const beeValue = calculateBEEValue(input);
-  const caloriesResult = calculateCaloriesResult(input, beeValue);
+  const bmrValue = calculateBMRValue(input);
+  const caloriesResult = calculateCaloriesResult(input, bmrValue);
 
   renderHeaderResults(caloriesResult);
   renderUserInput(input);
