@@ -22,7 +22,7 @@
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>What Do You Need it? | Daily Calories Calculator</title>
+    <title>Content Mobile | Daily Calories Calculator</title>
 </head>
 
 <body>
@@ -31,27 +31,13 @@
     <main>
         <section id="intro"></section>
 
-        <section>
-            <h3>Why do you need that?</h3>
-            <p>This application does not replace an appointment with your GP or your Nutritionist. It is just a
-                representation of a
-                calculation that gives an estimative based on a study. But, if you are feeling any side effects
-                from your day-to-day
-                routine, for example, excessive tiredness, lack of sleep or appetite, or want to achieve a goal,
-                such as gain or loose
-                weight, you must contact them to understand what is going on with your health and to get the
-                correct advice.</p>
+        <div class="mobile-content" id="content"></div>
 
-            <div class="link__container">
-                <span class="material-icons icons">
-                    arrow_back
-                </span>
-                <a href="/" class="link__container">
-                    Go back to home</a>
-            </div>
-        </section>
+        <div class="link__container" id="back-home"></div>
     </main>
-    <script src="./js/index.js"></script>
+
+    <script type="module" src="./js/index.js"></script>
+    <script type='module' src="./js/backHomeLink.js"></script>
 </body>
 
 </html>

@@ -32,88 +32,19 @@
         <section id="intro"></section>
 
         <div class="container-flex">
-            <div class="container content">
-                <section>
-                    <h3>What is the Daily Calorie calculator?</h3>
-                    <p>It is a mathematical equation for estimating the total calories
-                        a person needs, known as Total
-                        Energy Expenditure (TEE),
-                        considering their Basal Metabolic Rate (BMR) and Physical Activities Level (PAL).</p>
-                </section>
-
-                <section>
-                    <h3>What is Basal Metabolic Rate (BMR)?</h3>
-                    <p>It is the energy a person needs to carry out to
-                        complete fundamental metabolic functions, such as brain function or breath, in a period of time,
-                        without considering the energy that is spent on activities of the
-                        day. It is calculated by using the Harris-Benedict equation.</p>
-                </section>
-
-                <section>
-                    <h3>What is the Harris-Benedic Equation?</h3>
-                    <p>It is an equation that takes into consideration height, weight, age and gender to estimate an
-                        individual's basal
-                        metabolic rate.</p>
-                    <p>The result of this equation multiplied by the PAL factor is used to calculate TEE.</p>
-                </section>
-
-                <section>
-                    <h3>What is Physical Activities Level (PAL)?</h3>
-                    <p>PAL is a number multiplier used to estimate a person's TEE in combination with the BMR. It can be
-                        also used to compute the amount of food energy a
-                        person needs to consume in order to maintain a particular lifestyle.</p>
-                </section>
-
-                <section>
-                    <h3>Why do you need that?</h3>
-                    <p>This is just a representation of a calculation that gives an estimative amount of calories an
-                        individual body would need
-                        per day based on a study.</p>
-
-                    <p><strong>This application does not replace an appointment with your GP or your
-                            Nutritionist.</strong></p>
-
-                    <p>If you are feeling any side effects from your day-to-day routine, for example, excessive
-                        tiredness, lack of sleep or
-                        apetite, or want to achieve a goal, such as gain or loose weight, you must contact a
-                        professional to understand what is
-                        going on with your health and to get the correct advice.</p>
-                </section>
-            </div>
+            <div class="container content" id="content"></div>
 
             <div class="container">
                 <div class="content__container">
-                    <div class="data__container" id='data-container' data-visible="false">
-                        <!-- header -->
-                        <h3 id="data-title" class="data__title">Your Total Energy Expenditure (TEE):</h3>
-                        <p id="data-subtitle" class="data__subtitle"></p>
-                        <hr>
-                        <!-- body content -->
-                        <div id="data-root" class="data-root">
-                        </div>
-                        <!-- footer -->
-                        <div class="data__footer">
-                            <p>This calculation result is based on equation study, and it is not a prescription for your
-                                health and nutrition. Consult
-                                with your doctor or Nutritionist before making any changes to your diet.</p>
-                            <p><i>* Calculation based on the revised Harris-Benedict equation by Roza and Shizgal.</i>
-                            </p>
-                            <p>Do you want to know how BMR is calculated? Click <a
-                                    href="/calculation.html"><strong>here</strong></a>
-                            </p>
-                            <button id="data-button" class='data__button'>
-                                Try again
-                            </button>
-                        </div>
-                    </div>
 
+                    <!-- form -->
                     <div class="form__container" id='form-container' data-visible="true">
                         <h3 class="form__title">Calculate Total Energy Expenditure (TEE)</h3>
                         <hr>
                         <form id="form">
                             <div class="container-flex-center">
                                 <label for="unit">Unit system</label>
-                                <select name="unit" id="unit">
+                                <select name="unit" id="unit" required>
                                     <option value="" disabled selected hidden>Choose unit</option>
                                     <option value="metric">Metric (cm/kg)</option>
                                     <option value="imperial">Imperial (in/lbs)</option>
@@ -122,22 +53,22 @@
 
                             <div class="container-flex-center">
                                 <label for='height'>Height in <span id="height-unit">cm</span></label>
-                                <input type="number" name="height" id="height" min="0" placeholder="0">
+                                <input type="number" name="height" id="height" min="0" placeholder="0" required>
                             </div>
 
                             <div class="container-flex-center">
                                 <label for='weight'>Weight in <span id="weight-unit">kg</span></label>
-                                <input type="number" name="weight" id="weight" min="0" placeholder="0">
+                                <input type="number" name="weight" id="weight" min="0" placeholder="0" required>
                             </div>
 
                             <div class="container-flex-center">
                                 <label for='age'>Age in years</label>
-                                <input type="number" name="age" id="age" min="0" placeholder="0">
+                                <input type="number" name="age" id="age" min="0" placeholder="0" required>
                             </div>
 
                             <div class="container-flex-center">
                                 <label for='gender'>Gender</label>
-                                <select name="gender" id="gender">
+                                <select name="gender" id="gender" required>
                                     <option value="" disabled selected hidden>Choose gender</option>
                                     <option value="female">Female</option>
                                     <option value="male">Male</option>
@@ -146,7 +77,7 @@
 
                             <div class="container-flex-center">
                                 <label for='activity'>Physical Activity Level</label>
-                                <select name="activity" id="activity">
+                                <select name="activity" id="activity" required>
                                     <option value="" disabled selected hidden>Choose level of activities</option>
                                     <option value="1.2">Little to no exercise</option>
                                     <option value="1.375">Light exercise 1-2 times per week</option>
@@ -164,10 +95,37 @@
                             </div>
                         </form>
                     </div>
+
+                    <!-- results -->
+                    <div class="data__container" id='data-container' data-visible="false">
+                        <!-- results header -->
+                        <h3 id="data-title" class="data__title">Your Total Energy Expenditure (TEE):</h3>
+                        <p id="data-subtitle" class="data__subtitle"></p>
+                        <hr>
+
+                        <!-- results body content -->
+                        <div id="data-root" class="data-root"></div>
+                        <hr>
+
+                        <!-- results footer -->
+                        <div class="data__footer">
+                            <p>This calculation result is based on equation study, and it is not a prescription for your
+                                health and nutrition. Consult
+                                with your doctor or Nutritionist before making any changes to your diet.</p>
+                            <p><i>* Calculation based on the revised Harris-Benedict equation by Roza and Shizgal.</i>
+                            </p>
+                            <p>Do you want to know how BMR is calculated? Click <a
+                                    href="/calculation.html"><strong>here</strong></a>
+                            </p>
+                            <button id="data-button" class='data__button'>
+                                Try again
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
     </main>
-    <script src="./js/index.js"></script>
+    <script type='module' src="./js/index.js"></script>
 </body>
 
 </html>

@@ -1,11 +1,14 @@
+import { contentData } from "../data/contentData.js";
+
 window.addEventListener("load", () => {
   init();
 });
 
 function init() {
-  // once page is loaded,enable components and the following event functions:
+  // once page is loaded,enable components to be renderd and the following event functions:
   loadingHeader();
   loadingIntro();
+  loadingContent();
 
   handleClickMenu();
   handleClickUnitSystemForm();
@@ -17,50 +20,94 @@ function init() {
 function loadingHeader() {
   const header = document.querySelector("#header");
 
-  const content = `
-  <a href="/">
-    <img class='logo' src="./assets/logo.png" alt="Calculator Logo">
-  </a>
-  <button class='header__button-toggle' id="nav-button-toggle" aria-controls="navbar-menu"
-            aria-expanded="false">Menu&nbsp;
-    <span class="material-icons icon menu" id="menu">
-                menu
-    </span>
-  </button>
+  // creating elements
+  const linkHome = document.createElement("a");
+  const logo = document.createElement("img");
 
-  <!-- nav bar for small screens -->
-  <nav class="navbar-menu" id="navbar-menu" data-visible="false">
-    <ul>
-      <li>
-        <a href="/what-it-is.html">
-          <span aria-hidden="true">What is the Daily Calories Calculator?</span>
-        </a>
-      </li>
-     <li>
-        <a href="/why-do-you-need.html">
-          <span aria-hidden="true">Why do you need that?</span>
-        </a>
-      </li>
-      <li>
-        <a href="/how-is-calculated.html">
-          <span aria-hidden="true">How daily calories are calculated?</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  `;
+  const navbar = document.createElement("nav");
+  const menuButton = document.createElement("button");
+  const span = document.createElement("span");
+  const list = document.createElement("ul");
 
-  header.innerHTML = content;
+  // setting classes or ids
+  linkHome.title = "Home";
+  linkHome.href = "/";
+
+  logo.classList.add("logo");
+  logo.src = "./assets/logo.png";
+  logo.alt = "Calculator logo";
+
+  menuButton.classList.add("header__button-toggle");
+  menuButton.setAttribute("id", "nav-button-toggle");
+  menuButton.setAttribute("aria-controls", "navbar-menu");
+  menuButton.ariaLabel = "Menu";
+  menuButton.ariaExpanded = "false";
+
+  span.classList.add("material-icons");
+  span.classList.add("icon");
+  span.classList.add("menu");
+  span.setAttribute("id", "menu");
+  span.textContent = "menu";
+
+  navbar.classList.add("navbar-menu");
+  navbar.setAttribute("id", "navbar-menu");
+  navbar.setAttribute("data-visible", false);
+
+  contentData.map((item) => {
+    const listItem = document.createElement("li");
+    const link = document.createElement("a");
+
+    listItem.setAttribute("key", item.id);
+    link.textContent = item.title;
+    link.title = item.title;
+    link.href = `/content-mobile.html#${String(item.id)}`;
+
+    listItem.appendChild(link);
+    list.appendChild(listItem);
+  });
+
+  linkHome.appendChild(logo);
+  menuButton.appendChild(span);
+  navbar.appendChild(list);
+  header.appendChild(linkHome);
+  header.appendChild(menuButton);
+  header.appendChild(navbar);
 }
 
 function loadingIntro() {
   const intro = document.querySelector("#intro");
-  const content = `
-  <h1>Daily calories calculator</h1>
-  <h2>An easy way to calculate the energy you need for the day</h2>
-  `;
+  const title = document.createElement("h1");
+  const subtitle = document.createElement("h2");
 
-  intro.innerHTML = content;
+  title.textContent = "Daily calories calculator";
+  subtitle.textContent =
+    "An easy way to calculate the energy you need for the day";
+
+  intro.appendChild(title);
+  intro.appendChild(subtitle);
+}
+
+function loadingContent() {
+  // content loaded into sections inside div content
+  const content = document.querySelector("#content");
+
+  // mapping data content and create child inside of the method
+  contentData.map((item) => {
+    // creating elements
+    const section = document.createElement("section");
+    const title = document.createElement("h3");
+    const text = document.createElement("p");
+
+    section.setAttribute("key", item.id);
+    title.setAttribute("id", String(item.id));
+    title.textContent = item.title;
+    text.textContent = item.description;
+
+    // appending elements
+    section.appendChild(title);
+    section.appendChild(text);
+    content.appendChild(section);
+  });
 }
 
 // event functions
@@ -196,7 +243,7 @@ function calculateCaloriesResult(input, bmrValue) {
 
 function renderHeaderResults(result) {
   const dataSubtitle = document.querySelector("#data-subtitle");
-  dataSubtitle.innerHTML = `${Math.ceil(result)} calories/day *`;
+  dataSubtitle.textContent = `${Math.ceil(result)} calories/day *`;
 }
 
 function renderUserInput(input) {
@@ -205,19 +252,37 @@ function renderUserInput(input) {
   const bmrValue = calculateBMRValue(input);
 
   const dataRoot = document.querySelector("#data-root");
-  let results = `
-  <h3>Individual Results</h3>
-  <p>Height: ${height} ${unitSystem === "metric" ? "cm" : "inc"}</p>
-  <p>Weight: ${weight} ${unitSystem === "metric" ? "kg" : "lbs"}</p>
-  <p>Gender: ${gender}</p>
-  <p>Age: ${age} years old</p>
-  <p>Physical Activity Level: ${activity}</p>
-  <p>Physical Activity Level Factor: ${activityFactor}</p>
-  <p>Basal Metabolic Rate (BMR): ${bmrValue}</p>
-  <br>
-  `;
 
-  dataRoot.innerHTML = results;
+  const title = document.createElement("h3");
+  const hght = document.createElement("p");
+  const wght = document.createElement("p");
+  const gndr = document.createElement("p");
+  const yrs = document.createElement("p");
+  const pal = document.createElement("p");
+  const palFactor = document.createElement("p");
+  const brm = document.createElement("p");
+
+  title.textContent = "Individual Results";
+  hght.textContent = `Height: ${height} ${
+    unitSystem === "metric" ? "cm" : "inc"
+  }`;
+  wght.textContent = `Weight: ${weight} ${
+    unitSystem === "metric" ? "kg" : "lbs"
+  }`;
+  gndr.textContent = `Gender: ${gender}`;
+  yrs.textContent = `Age: ${age} years old`;
+  pal.textContent = `Physical Activity Level: ${activity}`;
+  palFactor.textContent = `Physical Activity Level Factor: ${activityFactor}`;
+  brm.textContent = `Basal Metabolic Rate (BMR): ${bmrValue.toFixed(0)}`;
+
+  dataRoot.appendChild(title);
+  dataRoot.appendChild(hght);
+  dataRoot.appendChild(wght);
+  dataRoot.appendChild(gndr);
+  dataRoot.appendChild(yrs);
+  dataRoot.appendChild(pal);
+  dataRoot.appendChild(palFactor);
+  dataRoot.appendChild(brm);
 }
 
 function clearFormInput() {

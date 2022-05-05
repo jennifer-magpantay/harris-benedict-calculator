@@ -1,21 +1,9 @@
 @use "../tools/responsive" as *;
 
 section {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 
     p {
         margin-bottom: 01rem;
-    }
-
-    .link__container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        margin: 01rem 0;
-
-        a {
-            font-weight: bold;
-        }
-    }
+    }    
 }
-

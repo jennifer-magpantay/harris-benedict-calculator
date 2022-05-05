@@ -29,6 +29,14 @@ a {
   font-size: $size-text;
   font-weight: 500;
   @include transitions;
+
+  &:visited {
+    color: $color-triadic-2;
+  }
+
+  &:active {
+    font-weight: bold;
+  }
 }
 
 // Fonts
@@ -73,10 +81,15 @@ ul {
   list-style: none;
 }
 
+li > a {
+  text-decoration: none;
+}
+
 // Classes
 .button__icon {
   display: contents;
 }
+
 .container-flex {
   @include container-flex;
 }
@@ -97,13 +110,34 @@ ul {
   border-radius: 5rem;
   background-color: $color-analogous-2;
   color: #ffff;
-  font-weight: bold;
+
   letter-spacing: 1.5px;
   text-transform: uppercase;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    background-color: darken($color-analogous-2, 15);
+    background-color: lighten($color-triadic-1, 15);
+  }
+
+  &:active {
+    font-weight: bold;
+  }
+}
+
+.link__container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 01rem 0;
+  padding: 01rem 02rem;
+  background-color: $color-gray-light;
+  border-radius: 5rem;
+
+  a {
+    font-size: $size-text;
+    margin-left: 01rem;
+    text-decoration: none;
   }
 }
