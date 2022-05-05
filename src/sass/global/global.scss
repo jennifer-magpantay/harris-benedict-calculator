@@ -85,6 +85,15 @@ li > a {
   text-decoration: none;
 }
 
+noscript {
+  display: block;
+  margin: 05rem auto 01rem;
+  color: $color-error;
+  font-size: $size-subtitle;
+  font-weight: bold;
+  text-align: center;
+}
+
 // Classes
 .button__icon {
   display: contents;
